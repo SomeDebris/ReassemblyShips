@@ -88,7 +88,48 @@ struct ShipData{WG<:StaticVector{4,Int}}
     wgroup::WG
 end
 
-mutable struct Block{T<:Real,T2<:StaticVector{2,T},F<:Integer,Shapetype,Boosttype,shroud,shroudvector <: AbstractVector{shroud}}
+mutable struct Block{ID<:Integer,
+                     T<:Real,
+                     T2<:StaticVector{2,T},
+                     F<:Integer,
+                     Shapetype,
+                     Boosttype,
+                     shroud,
+                     shroudvector <: AbstractVector{shroud},
+                     CMD,
+                     replicatetype<:Block
+                     Tcannon,
+                     Tlaser,
+                     Tshield}
+    ident::ID
+    offset::T2
+    angle::T
+    command::CMD
+    persistentIdent::UInt
+    bindingId::UInt8
+
+    lifetime::T
+    features::BlockFeatures
+    growFrac::T
+    health::T
+    capacity::T
+    explodeFaction::F
+    growFeatures::BlockFeatures
+    launchFeatures::BlockFeatures
+    launchLifetime::T
+    launchResources::T
+    growRate::T
+    fillColor::UInt
+    fillColor1::UInt
+    lineColor::UInt
+    thrusterColor::UInt
+    thrusterColor1::UInt
+    replicateBlock::replicatetype
+    cannon::Tcannon
+    laser::Tlaser
+    shield::Tshield
+
+
     group::F
     shape::Shapetype
     scale::UInt8
@@ -157,6 +198,7 @@ struct ReassemblyShip{T<:Real,
     data::SD
     blocks::BT
 end
+
 
 
 
