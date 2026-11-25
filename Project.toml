@@ -1,0 +1,18 @@
+name = "ReassemblyShips"
+uuid = "3afb09de-298a-4659-9a40-f810fa4b45ee"
+version = "0.1.0"
+authors = ["Magnus Ramsey <38709696+SomeDebris@users.noreply.github.com>"]
+
+[deps]
+BitFlags = "d1d4a3ce-64b1-5f1a-9ba4-7e7e69966f35"
+JSON3 = "0f8b85d8-7281-11e9-16c2-39a750bddbf1"
+StaticArrays = "90137ffa-7385-5640-81b9-e52037218182"
+StructArrays = "09ab397b-f2b6-538f-b94a-2f83cf4a842a"
+StructTypes = "856f2bd8-1eba-4b0a-8007-ebc267875bd4"
+
+[compat]
+BitFlags = "0.1.10"
+JSON3 = "1.14.4"
+StaticArrays = "1.9.25"
+StructArrays = "0.7.4"
+StructTypes = "1.11.1"
