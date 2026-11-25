@@ -89,8 +89,6 @@ struct ShipData{WG<:StaticVector{4,Int}}
 end
 
 mutable struct Block{ID<:Integer,
-                     T<:Real,
-                     T2<:StaticVector{2,T},
                      F<:Integer,
                      Shapetype,
                      Boosttype,
@@ -102,23 +100,23 @@ mutable struct Block{ID<:Integer,
                      Tlaser,
                      Tshield}
     ident::ID
-    offset::T2
-    angle::T
+    offset::SVector{2,Float32}
+    angle::Float32
     command::CMD
     persistentIdent::UInt
     bindingId::UInt8
 
-    lifetime::T
+    lifetime::Float32
     features::BlockFeatures
-    growFrac::T
-    health::T
-    capacity::T
+    growFrac::Float32
+    health::Float32
+    capacity::Float32
     explodeFaction::F
     growFeatures::BlockFeatures
     launchFeatures::BlockFeatures
-    launchLifetime::T
-    launchResources::T
-    growRate::T
+    launchLifetime::Float32
+    launchResources::Float32
+    growRate::Float32
     fillColor::UInt
     fillColor1::UInt
     lineColor::UInt
@@ -129,62 +127,61 @@ mutable struct Block{ID<:Integer,
     laser::Tlaser
     shield::Tshield
 
-
     group::F
     shape::Shapetype
     scale::UInt8
     name::String
     points::Int
-    durability::T
-    armor::T
-    density::T
+    durability::Float32
+    armor::Float32
+    density::Float32
     blurb::String
-    powerCapacity::T
-    thrusterForce::T
-    thrusterBoost::T
-    thrusterBoostTime::T
-    torquerTorque::T
+    powerCapacity::Float32
+    thrusterForce::Float32
+    thrusterBoost::Float32
+    thrusterBoostTime::Float32
+    torquerTorque::Float32
     boost::Boosttype
-    replicateTime::T
-    turretSpeed::T
-    turretLimit::T
-    rotatorSpeed::T
-    replicateTime::T
-    turretSpeed::T
-    turretLimit::T
-    rotatorSpeed::T
-    rotatorLimit::T
-    generatorCapacityPerSec::T
-    explodeDamage::T
-    explodeRadius::T
-    explodeStdDev::T
+    replicateTime::Float32
+    turretSpeed::Float32
+    turretLimit::Float32
+    rotatorSpeed::Float32
+    replicateTime::Float32
+    turretSpeed::Float32
+    turretLimit::Float32
+    rotatorSpeed::Float32
+    rotatorLimit::Float32
+    generatorCapacityPerSec::Float32
+    explodeDamage::Float32
+    explodeRadius::Float32
+    explodeStdDev::Float32
     deathFeatures::BlockFeatures
-    launchSpeed::T
-    launcherPower::T
-    launcherSpeed::T
-    launcherOutSpeed::T
-    launcherAngVel::T
-    tractorRange::T
-    photosynthPerSec::T
-    seedLifetime::T
-    chargeMaxTime::T
-    chargeMin::T
-    teleporterRadius::T
-    activatePower::T
-    meleeDamage::T
+    launchSpeed::Float32
+    launcherPower::Float32
+    launcherSpeed::Float32
+    launcherOutSpeed::Float32
+    launcherAngVel::Float32
+    tractorRange::Float32
+    photosynthPerSec::Float32
+    seedLifetime::Float32
+    chargeMaxTime::Float32
+    chargeMin::Float32
+    teleporterRadius::Float32
+    activatePower::Float32
+    meleeDamage::Float32
     sort::Int
-    barrelSize::T2
-    barrelOffset::T2
-    barrelSpacing::T2
+    barrelSize::SVector{2,Float32}
+    barrelOffset::SVector{2,Float32}
+    barrelSpacing::SVector{2,Float32}
     barrelCount::UInt8
     explosive::ExplosiveFlags
-    barrelTaper::T
-    elasticity::T
+    barrelTaper::Float32
+    elasticity::Float32
     sound::String
-    aihint_range::T
-    aihint_muzzleVel::T
-    aihint_dps::T
-    finForce::T
+    aihint_range::Float32
+    aihint_muzzleVel::Float32
+    aihint_dps::Float32
+    finForce::Float32
     shroud::shroudvector
 end
 
